@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Yoga - Admin</string>
+    <string name="day_of_the_week">Day of the week :</string>
+    <string name="time_of_course">Time of course :</string>
+    <string name="yoga_admin">Yoga Admin</string>
+    <string name="add_course">Add Course</string>
+    <string-array name="days_of_week">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+</resources>
