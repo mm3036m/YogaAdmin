@@ -153,7 +153,7 @@ public class CourseListActivity extends AppCompatActivity {
     }
 
     public  Map<String, Object> prepareApiData() {
-        String userId="123";
+        String userId="mm3036m";
         Map<String, Object> apiData = new HashMap<>();
         apiData.put("userId", userId);
 
