@@ -36,6 +36,7 @@ public class CourseListAdapter extends ArrayAdapter<CourseDetails> {
         TextView textViewDuration = convertView.findViewById(R.id.textViewDuration);
 
         ImageButton buttonDelete = convertView.findViewById(R.id.buttonDelete);
+        ImageButton buttonEdit = convertView.findViewById(R.id.buttonEdit);
 
         if (course != null) {
             textViewType.setText(course.getType());
@@ -52,7 +53,16 @@ public class CourseListAdapter extends ArrayAdapter<CourseDetails> {
 
                 }
             });
+            buttonEdit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getContext(), EditCourseActivity.class);
+                    intent.putExtra("courseId", course.getCourseId());
+                    getContext().startActivity(intent);
+                }
+            });
 
+            buttonEdit.setTag(position);
 
             buttonDelete.setTag(position);
         }

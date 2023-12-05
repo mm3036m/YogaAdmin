@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".EditCourseActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:titleTextColor="@android:color/white"/>
+        </com.google.android.material.appbar.AppBarLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/day_of_the_week"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="30dp"
+            />
+        <Spinner
+            android:id="@+id/spinnerDayOfWeek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time_of_course"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Use NumberPicker for the hour and minute -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="108dp"
+            android:layout_marginBottom="16dp"
+            android:layout_margin="16dp"
+            android:orientation="horizontal">
+
+            <!-- Hour Picker -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hours"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp" />
+
+                <NumberPicker
+                    android:id="@+id/numberPickerHour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants" />
+            </LinearLayout>
+
+            <!-- Minute Picker -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Minutes"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp" />
+
+                <NumberPicker
+                    android:id="@+id/numberPickerMinute"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editTextCapacity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Capacity"
+            android:inputType="number"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/editTextDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Duration"
+            android:inputType="text"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/editTextPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Price per class"
+            android:inputType="numberDecimal"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/editTextDescription2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description (Optional)"
+            android:inputType="textMultiLine"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="16dp"/>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/updateCourse"
+            android:text="Submit" />
+
+    </LinearLayout>
+</ScrollView>

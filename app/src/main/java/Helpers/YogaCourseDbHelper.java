@@ -1,5 +1,6 @@
 package Helpers;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -157,6 +158,25 @@ public class YogaCourseDbHelper extends SQLiteOpenHelper {
 
         cursor.close();
         return courseDetails;
+    }
+
+    public void updateCourse(long courseId, CourseDetails updatedCourseDetails) {
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_DAY_OF_WEEK, updatedCourseDetails.getDayOfWeek());
+        values.put(COLUMN_HOUR, updatedCourseDetails.getHour());
+        values.put(COLUMN_MINUTE, updatedCourseDetails.getMinute());
+        values.put(COLUMN_CAPACITY, updatedCourseDetails.getCapacity());
+        values.put(COLUMN_DURATION, updatedCourseDetails.getDuration());
+        values.put(COLUMN_PRICE, updatedCourseDetails.getPrice());
+        values.put(COLUMN_TYPE, updatedCourseDetails.getType());
+        values.put(COLUMN_DESCRIPTION, updatedCourseDetails.getDescription());
+
+        String selection = COLUMN_ID + " = ?";
+        String[] selectionArgs = {String.valueOf(courseId)};
+
+        db.update(TABLE_NAME, values, selection, selectionArgs);
     }
 
 
